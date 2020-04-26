@@ -1,3 +1,6 @@
+# docs images
+/images/*
+
 # C++ objects and libs
 *.slo
 *.lo
