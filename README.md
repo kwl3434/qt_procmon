@@ -1,6 +1,6 @@
 # qt_pocmon
 
-# Operating systems supported<br>
+<b>Operating systems supported<br></b>
 Windows 7 (x86/x64) <br>
 Windows 10 (x86/x64) <br>
 
