@@ -5,3 +5,9 @@ project(qt_procmon)
 #add_library()       library
 #add_subdirectory()  directory path
 #add_dependencies() dependencies
+
+
+
+add_subdirectory(./helloworld/ 
+	../build/Linux/
+) 
