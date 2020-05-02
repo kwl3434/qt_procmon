@@ -1,6 +1,9 @@
 # docs images
 /images/*
 
+# builds
+/builds/*
+
 # C++ objects and libs
 *.slo
 *.lo
