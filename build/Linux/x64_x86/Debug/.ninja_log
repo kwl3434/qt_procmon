@@ -1,0 +1,12 @@
+# ninja log v5
+1	10	0	CMakeFiles/helloworld_automoc	d69599c285e7d424
+10	12	0	helloworld_automoc.cpp	87c2bc0beaf1d91d
+12	130	0	CMakeFiles/helloworld.dir/helloworld_automoc.cpp.o	641ac99bd67a6d6f
+10	583	0	CMakeFiles/helloworld.dir/qt-main.cpp.o	44dbf89ec2a564c9
+583	725	0	helloworld	31d29cd1712bec8b
+0	10	0	CMakeFiles/helloworld_automoc	d69599c285e7d424
+0	10	0	CMakeFiles/helloworld_automoc	d69599c285e7d424
+10	518	0	CMakeFiles/helloworld.dir/qt-main.cpp.o	44dbf89ec2a564c9
+518	682	0	helloworld	31d29cd1712bec8b
+0	9	0	CMakeFiles/helloworld_automoc	d69599c285e7d424
+0	21	0	CMakeFiles/helloworld_automoc	d69599c285e7d424
