@@ -20,20 +20,21 @@ endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-IF(CMAKE_BUILD_TYPE MATCHES Debug)
+if(CMAKE_BUILD_TYPE MATCHES Debug)
   message("Debug build.")
-ELSEIF(CMAKE_BUILD_TYPE MATCHES Release)
+elseif(CMAKE_BUILD_TYPE MATCHES Release)
   message("Release build.")
-ELSE()
+else()
   message("Some other build type.")
-ENDIF()
+endif()
 
-if(LINUX)
+if(UNIX AND NOT APPLE)
 SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Linux/x64_x86/${CMAKE_BUILD_TYPE} )
-ELSEIF(WIN32)
+elseif(WIN32)
 SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Win/x32/${CMAKE_BUILD_TYPE} )
-ELSEIF(WIN64)
+else()
 SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Win/x64/${CMAKE_BUILD_TYPE} )
+endif()
 
 add_executable(helloworld
     qt-main.cpp
