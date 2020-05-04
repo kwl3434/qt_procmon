@@ -2,22 +2,39 @@
 
 ```
 qt_procmon/
+├── build
+│   ├── Linux
+│   │    ├── x64_x86
+│   │    │   ├── Release
+│   │    │   └── Debug
+│   │    └── i386
+│   │        ├── Release
+│   │        └── Debug
+│   └── Win
+│        ├── x64
+│        │   ├── Release
+│        │   └── Debug
+│        └── x32
+│            ├── Release
+│            └── Debug
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── images
 │   ├── qt install images
-│   │   └── ~~~~~~
-│   └── ubuntu qt images
-│       └── ~~~~~~
+│   │   └── *.PNG
+│   ├── ubuntu qt images
+│   │   └── *.PNG
+│   └── Windows cmake images
+│       └── *.PNG
 ├── LICENSE
 ├── README.md
 └── Src
     ├── build_all_Debug.sh
     ├── build_all_Release.sh
     ├── CMakeLists.txt
-    └── helloworld
-        ├── CMakeLists.txt
-        ├── helloworld_Debug.sh
-        ├── helloworld_Release.sh
-        └── qt-main.cpp
+    ├── CMakeSettings.json
+    ├── helloworld
+    │   └── qt-main.cpp
+    └── Makefile
+
 ```
