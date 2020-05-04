@@ -1,0 +1,7 @@
+# ninja log v5
+5	367	610304097	build.ninja	77aecf05f01f5c25
+2	61	0	helloworld/CMakeFiles/helloworld_autogen	8b3b5f1e540fe32
+2	61	0	helloworld/helloworld_autogen/mocs_compilation.cpp	8b3b5f1e540fe32
+61	129	610304097	helloworld/CMakeFiles/helloworld.dir/helloworld_autogen/mocs_compilation.cpp.obj	b7deff21747de738
+65	1422	610304098	helloworld/CMakeFiles/helloworld.dir/qt-main.cpp.obj	af74f9c528c3155
+1426	1694	610304099	C:/build/Win/x32/Release/helloworld.exe	81a95f288847c827
