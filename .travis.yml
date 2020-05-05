@@ -52,4 +52,3 @@ before_script:
 
 script:
   - cmake --build build
-  - (cd build ; cpack -G DEB)
