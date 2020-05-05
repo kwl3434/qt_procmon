@@ -1,5 +1,7 @@
 language: cpp
 
+matrix: include:
+  - os: linux
 
 addons:
   apt:
@@ -8,3 +10,14 @@ addons:
     packages:
       - cmake-data
       - cmake
+      
+before_install :
+  - sudo apt-get install build-essential
+  - export PATH=/Qt5.14.2/5.14.2/gcc_64/bin/:/Qt5.14.2/Tools/QtCreator/bin/:$PATH
+  - sudo apt-get install qtbase5-dev
+  - sudo apt-get install ninja-build
+  
+script :
+  - cd ./Src
+  - chmod +x build_all_Release.sh
+  - ./build_all_Release.sh
