@@ -51,4 +51,4 @@ before_script:
   - cmake -B build -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_C_COMPILER=${C_COMPILER} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ./Src/
 
 script:
-  - cmake --build build
+  - cmake --build Src
