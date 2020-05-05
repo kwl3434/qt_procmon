@@ -1,4 +1,4 @@
-# qt_pocmon
+# qt_pocmon [![Build Status](https://travis-ci.com/github/kwl3434/qt_procmon)](https://travis-ci.com/github/kwl3434/qt_procmon)
 
 ```
 qt_procmon/
