@@ -1,3 +1,4 @@
+  
 #CMake Project name
 
 #add_executable()    source file
@@ -43,6 +44,3 @@ add_executable(helloworld
 )
 target_link_libraries(helloworld Qt5::Widgets)
 
-
-                      
-                                              

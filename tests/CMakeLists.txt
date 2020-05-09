@@ -1,0 +1,27 @@
+
+project(tests)
+
+set(BINARY ${CMAKE_PROJECT_NAME}_tst)
+
+file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
+
+set(SOURCES ${TEST_SOURCES})
+
+
+if(UNIX AND NOT APPLE)
+SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Linux/x64_x86/${CMAKE_BUILD_TYPE} )
+elseif(WIN32)
+SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Win/x32/${CMAKE_BUILD_TYPE} )
+set (CMAKE_PREFIX_PATH "C:\\Qt\\5.14.2\\msvc2017")
+else()
+SET ( CMAKE_RUNTIME_OUTPUT_DIRECTORY ../../build/Win/x64/${CMAKE_BUILD_TYPE} )
+set (CMAKE_PREFIX_PATH "C:\\Qt\\5.14.2\\msvc2017")
+endif()
+
+
+add_executable(${BINARY} ${TEST_SOURCES})
+
+add_test(NAME ${BINARY} COMMAND ${BINARY})
+
+target_link_libraries(${BINARY} # PUBLIC ${CMAKE_PROJECT_NAME}_lib 
+gtest)
