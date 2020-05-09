@@ -49,7 +49,7 @@ before_script:
   - ${CXX_COMPILER} --version
   - ${C_COMPILER} --version
   - git clone https://github.com/google/googletest/ ./lib/
-  - cmake -B build -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_C_COMPILER=${C_COMPILER} -DCMAKE_BUILD_TYPE=${BUILD_TYPE}
+  - cmake -B build -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_C_COMPILER=${C_COMPILER} -DCMAKE_BUILD_TYPE=${BUILD_TYPE}./
 
 script:
   - cmake --build build
