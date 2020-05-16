@@ -8,3 +8,4 @@ SET(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(Src)
 add_subdirectory(tests)
+add_subdirectory(lib/googletest)
