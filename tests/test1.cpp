@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 TEST(testA, test1) {
     EXPECT_EQ (0, 0);
