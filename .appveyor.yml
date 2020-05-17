@@ -50,7 +50,7 @@ build:
 before_build:
 - cmd: |-
     cd c:\projects\qt_procmon\
-    cmake ../../. -G %generator%
+    cmake . -G %generator%
     
 build:
   project: c:\projects\qt_procmon\build\qt_procmon.sln
