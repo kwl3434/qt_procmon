@@ -12,11 +12,10 @@ notifications:
  skip_commits:
   files:
     - README.md
-    - images/*
+    - images/
     - .travis.yml
     - CODE_OF_CONDUCT.md
     - CONTRIBUTING.md
-    - LICENSE
 image:
   - Visual Studio 2017
   
