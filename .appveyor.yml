@@ -8,14 +8,7 @@ notifications:
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true  
- 
- skip_commits:
-  files:
-    - README.md
-    - images/
-    - .travis.yml
-    - CODE_OF_CONDUCT.md
-    - CONTRIBUTING.md
+
 image:
   - Visual Studio 2017
   
