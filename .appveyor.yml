@@ -7,44 +7,40 @@ notifications:
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true  
-   
+    
+image:
+  - Visual Studio 2017
+  
+configuration:
+- Release
+- Debug
+
+platform:
+- x64
+
 environment:
-  CMAKE_BUILD_TYPE: Release
-  QT5_DIR: C:/Qt/5.14.2/msvc2017_64/
-  APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-  CMAKE_GENERATOR: Visual Studio 15 2017 Win64
-  # vcpkg disabled 
-  # CMAKE_TOOLCHAIN_FILE: c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake
-  # VCPKG_TARGET_TRIPLET: x64-windows 
   matrix:
-    only:
-      - image: Visual Studio 2017
+  - arch: Win64
+  # - arch: #does not work, Release|x64 not a valid target
+matrix:
+  fast_finish: true
   
-# vcpkg disabled
-# cache: c:\tools\vcpkg\installed\  
-  
-# 
-#if you need to debug uncomment these lines (see https://www.appveyor.com/docs/how-to/rdp-to-build-worker/)
-#init:
-#  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-#
-#on_finish:
-#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
 init:
-  - ps: | 
-      If ($env:APPVEYOR_REPO_TAG -eq "false" -and $env:DEFAULT_ENABLED -eq "false") {
-        Write-Host "Skipping build"
-        Exit-AppveyorBuild
-      }   
-build_script:
-  - cmd: cd %APPVEYOR_BUILD_FOLDER% 
-  - cmd: git clone https://github.com/google/googletest/ ./lib/googletest
-  - cmd: cd ./lib/googletest
-  - cmd: cmake . -Dgtest_force_shared_crt=ON
-  - cmd: cd %APPVEYOR_BUILD_FOLDER% 
-  - cmd: cmake . -DCMAKE_BUILD_TYPE=Release
-  - cmd: cmake --build build
-  
+- set arch=
+- if "%arch%"=="Win64" ( set arch= Win64)
+- echo %arch%
+- echo %APPVEYOR_BUILD_WORKER_IMAGE%
+- if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017%arch%" )
+- echo %generator%
 
-test: off
+before_build:
+- cmd: |-
+    git clone https://github.com/google/googletest/ ./lib/googletest
+    cd ./lib/googletest
+    cmake --version
+    cmake . -Dgtest_force_shared_crt=ON
+    cmake ../../. -G %generator%
+build:
+  project: c:\projects\qt_procmon\build\qt_procmon.sln
+  verbosity: minimal
+  parallel: true
