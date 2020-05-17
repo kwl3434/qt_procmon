@@ -33,6 +33,10 @@ init:
 - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017%arch%" )
 - echo %generator%
 
+install:
+  - set QTDIR=C:\Qt\5.14.2\msvc2017_64
+  - set PATH=%PATH%;%QTDIR%\bin;
+  
 before_build:
 - cmd: |-
     git clone https://github.com/google/googletest/ ./lib/googletest
