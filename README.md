@@ -4,6 +4,14 @@ Linux build
 Windows build <br>
 [![Build status](https://ci.appveyor.com/api/projects/status/h7g4lej3tbm3fhb0?svg=true)](https://ci.appveyor.com/project/kwl3434/qt-procmon)
 ```
+### build step
+1. clone project
+2. windows : https://github.com/kwl3434/qt_procmon/wiki/QT-Windows-environment 
+   linux : https://github.com/kwl3434/qt_procmon/wiki/QT-Linux(Ubuntu)-environment
+3. https://github.com/kwl3434/qt_procmon/wiki/Cmake-Config(Windows-Linux)
+4. https://github.com/kwl3434/qt_procmon/wiki/gtest-config(Windows-Linux)
+5. windows run qt_procmon.sln build all
+   Linux run qt_procmon/Src/build_all_Release.sh
 qt_procmon/
 ├── build
 │   ├── Linux
