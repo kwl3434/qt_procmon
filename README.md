@@ -1,6 +1,8 @@
 # qt_pocmon 
-Linux build : [![Build Status](https://travis-ci.com/kwl3434/qt_procmon.svg?branch=master)](https://travis-ci.com/kwl3434/qt_procmon)<br>
-Windows build : [![Build status](https://ci.appveyor.com/api/projects/status/h7g4lej3tbm3fhb0?svg=true)](https://ci.appveyor.com/project/kwl3434/qt-procmon)
+Linux build <br>    
+[![Build Status](https://travis-ci.com/kwl3434/qt_procmon.svg?branch=master)](https://travis-ci.com/kwl3434/qt_procmon)<br>
+Windows build <br>
+[![Build status](https://ci.appveyor.com/api/projects/status/h7g4lej3tbm3fhb0?svg=true)](https://ci.appveyor.com/project/kwl3434/qt-procmon)
 ```
 qt_procmon/
 ├── build
