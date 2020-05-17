@@ -1,0 +1,50 @@
+version: '1.0.{build}'
+
+notifications:
+  - provider: Email
+    to:
+      - kwl3434@gmail.com
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true  
+    
+image:
+  - Visual Studio 2017
+  
+configuration:
+- Release
+- Debug
+
+platform:
+- x64
+
+environment:
+  matrix:
+  - arch: Win64
+  # - arch: #does not work, Release|x64 not a valid target
+matrix:
+  fast_finish: true
+  
+init:
+- set arch=
+- if "%arch%"=="Win64" ( set arch= Win64)
+- echo %arch%
+- echo %APPVEYOR_BUILD_WORKER_IMAGE%
+- if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017%arch%" )
+- echo %generator%
+
+install:
+  - set QTDIR=C:\Qt\5.13.2\msvc2017_64
+  - set PATH=%PATH%;%QTDIR%\bin;
+  
+before_build:
+- cmd: |-
+    git clone https://github.com/google/googletest/ ./lib/googletest
+    cmake . -G %generator% -Dgtest_force_shared_crt=ON 
+
+build:
+  project: C:\projects\qt-procmon\qt_procmon.sln
+  verbosity: minimal
+  parallel: true
+  
+    

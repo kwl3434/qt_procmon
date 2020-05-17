@@ -1,5 +1,5 @@
 #CMake Project name qt_procmon
-project(qt_procmon)
+project(qt_procmon_Src)
 
 #add_executable()    source file
 #add_library()       library
