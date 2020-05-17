@@ -4,10 +4,19 @@ notifications:
   - provider: Email
     to:
       - kwl3434@gmail.com
+      - tjdskaqks@gmail.com
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true  
-    
+ 
+ skip_commits:
+  files:
+    - README.md
+    - images/*
+    - .travis.yml
+    - CODE_OF_CONDUCT.md
+    - CONTRIBUTING.md
+    - LICENSE
 image:
   - Visual Studio 2017
   
