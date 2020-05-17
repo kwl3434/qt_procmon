@@ -43,7 +43,7 @@ before_build:
     cmake . -G %generator% -Dgtest_force_shared_crt=ON 
 
 build:
-  project: .\build\qt_procmon.sln
+  project: C:\projects\qt_procmon\Build\qt_procmon.sln
   verbosity: minimal
   parallel: true
   
