@@ -36,23 +36,11 @@ init:
 before_build:
 - cmd: |-
     git clone https://github.com/google/googletest/ ./lib/googletest
-    cd ./lib/googletest
-    cmake --version
-    cmake . -Dgtest_force_shared_crt=ON
-
-build:
-  project: c:\projects\qt_procmon\lib\googletest\googletest\gtest.sln
-  verbosity: minimal
-  parallel: true
-  
-      
-      
-before_build:
-- cmd: |-
-    cd c:\projects\qt_procmon\
     cmake . -G %generator%
-    
+
 build:
   project: c:\projects\qt_procmon\build\qt_procmon.sln
   verbosity: minimal
   parallel: true
+  
+    
